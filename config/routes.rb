@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  root to: 'visitors#index'
+  get('/game/play_beginner', { :controller => 'game', :action => 'play_beginner' })
+  get('/game/play_intermediate', { :controller => 'game', :action => 'play_intermediate' })
+  get('/game/play_advance', { :controller => 'game', :action => 'play_advance' })
+  get('/learn/basics', { :controller => 'learn', :action => 'basics' })
+   get('/learn/beginner', { :controller => 'learn', :action => 'beginner' })
+     get('/learn/intermediate', { :controller => 'learn', :action => 'intermediate' })
+     get('/learn/advance', { :controller => 'learn', :action => 'advance' })
+ 
+end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -8,7 +20,7 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
+  # Example o f named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
@@ -53,4 +65,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+
